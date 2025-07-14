@@ -3,68 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tío Rico - Juegos Online</title>
+  <title>Tío Rico Juegos</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0d1b2a, #1b263b);
-      color: #e0e0e0;
+      background: #000;
+      color: #fff;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      text-align: center;
       justify-content: center;
-      align-items: center;
       padding: 20px;
     }
-    .container {
-      background: rgba(27,38,59,0.85);
-      border-radius: 12px;
-      padding: 25px 30px;
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 0 15px #2a5298;
+    img {
+      max-width: 250px;
+      margin: 0 auto 20px;
+      display: block;
     }
     h1 {
-      margin-bottom: 15px;
-      font-size: 2rem;
-      color: #58a6ff;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
     }
     p {
-      font-size: 1rem;
-      margin-bottom: 25px;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
       line-height: 1.4;
     }
-    a.button-whatsapp {
-      background-color: #25D366;
+    button {
+      background-color: #25d366; /* verde WhatsApp */
       color: white;
-      text-decoration: none;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      display: block;
+    }
+    button:hover {
+      background-color: #1ebe57;
+    }
+    #mensaje {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #fff;
+      min-height: 24px;
       font-weight: 600;
-      padding: 15px 25px;
-      border-radius: 50px;
-      display: inline-block;
-      font-size: 1.1rem;
-      transition: background-color 0.3s;
     }
-    a.button-whatsapp:hover {
-      background-color: #128C4A;
-    }
-    footer {
-      margin-top: auto;
-      font-size: 0.8rem;
-      color: #7a7a7a;
+    @media (min-width: 600px) {
+      body {
+        padding: 40px;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.4rem;
+      }
+      button {
+        font-size: 1.4rem;
+        max-width: 400px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Bienvenido a Tío Rico</h1>
-    <p>Accedé a nuestra plataforma exclusiva de entretenimiento digital. Juegos diseñados para divertirte y relajarte.</p>
-    <a href="https://wa.me/5492234555074?text=Hola%20quiero%20saber%20más%20sobre%20T%C3%ADo%20Rico" class="button-whatsapp" target="_blank" rel="noopener noreferrer">
-      Contactar por WhatsApp
-    </a>
-  </div>
-  <footer>© 2025 Tío Rico. Todos los derechos reservados.</footer>
+
+  <img src="https://i.postimg.cc/1XHWdq2N/tio-rico-logo.png" alt="Logo Tío Rico Juegos" />
+  <h1>¡Bienvenido a Tío Rico Juegos!</h1>
+  <p>Los mejores juegos para ganar dinero jugando en tu celular.</p>
+  <button id="wppButton">¡Quiero jugar y ganar!</button>
+  <div id="mensaje"></div>
+
+  <script>
+    const button = document.getElementById('wppButton');
+    const mensaje = document.getElementById('mensaje');
+    const telefono = '5492234555074';
+
+    button.addEventListener('click', () => {
+      mensaje.textContent = "Hola, vi la publicidad de Tío Rico Juegos y quiero empezar ya";
+      setTimeout(() => {
+        const urlWpp = `https://wa.me/${telefono}`;
+        window.location.href = urlWpp;
+      }, 1500);
+    });
+  </script>
+
 </body>
 </html>
+
+    
