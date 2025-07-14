@@ -2,114 +2,104 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tío Rico Juegos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tío Rico - Juegos Online</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: url('https://i.imgur.com/l7ZMeIo.jpg') no-repeat center center fixed;
-      background-size: cover;
+      font-family: 'Arial', sans-serif;
+      background-color: #0a0a0a;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
       text-align: center;
-      justify-content: center;
-      padding: 20px;
+      padding: 0;
     }
 
-    .neon-text {
-      font-size: 3.5rem;
-      font-weight: bold;
-      color: #0ff;
-      text-shadow:
-        0 0 5px #0ff,
-        0 0 10px #0ff,
-        0 0 20px #0ff,
-        0 0 40px #0ff,
-        0 0 80px #0ff;
-      margin-bottom: 15px;
+    header {
+      padding: 30px 20px;
+      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
     }
 
-    p {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-      line-height: 1.4;
-      text-shadow: 0 0 5px rgba(0,0,0,0.8);
+    .logo {
+      max-width: 200px;
+      margin-bottom: 20px;
     }
 
-    button {
-      background-color: #25d366;
-      color: white;
-      border: none;
+    h1 {
+      font-size: 2em;
+      color: #ffcc00;
+      text-shadow: 0 0 10px #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
       padding: 15px 30px;
-      font-size: 1.2rem;
+      background-color: #00ff99;
+      color: #000;
       font-weight: bold;
       border-radius: 30px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      width: 100%;
-      max-width: 320px;
-      margin: 0 auto;
-      display: block;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      text-decoration: none;
+      box-shadow: 0 0 10px #00ff99;
+      transition: 0.3s;
     }
 
-    button:hover {
-      background-color: #1ebe57;
+    .cta-button:hover {
+      background-color: #00cc7a;
     }
 
-    #mensaje {
-      margin-top: 20px;
-      font-size: 1rem;
-      color: #fff;
-      min-height: 24px;
-      font-weight: 600;
-      text-shadow: 0 0 4px #000;
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      margin: 40px 20px;
     }
 
-    @media (min-width: 600px) {
-      body {
-        padding: 40px;
-      }
+    .feature {
+      background-color: #111;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 8px #00ff99;
+    }
 
-      .neon-text {
-        font-size: 4.5rem;
-      }
+    .feature-icon {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
 
-      p {
-        font-size: 1.5rem;
-      }
-
-      button {
-        font-size: 1.4rem;
-        max-width: 400px;
-      }
+    footer {
+      margin-top: 40px;
+      font-size: 0.8em;
+      color: #888;
+      padding-bottom: 40px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <!-- Puedes reemplazar esta imagen por una del pato sin dinero -->
+    <img src="https://via.placeholder.com/200x200.png?text=Logo" alt="Tío Rico" class="logo" />
+    <h1>Diversión sin límites</h1>
+    <a href="https://api.whatsapp.com/send?phone=5492234555074&text=Hola%2C+quiero+info+sobre+los+juegos" class="cta-button">Contactar ahora</a>
+  </header>
 
-  <div class="neon-text">TÍO RICO JUEGOS</div>
-  <p>Los mejores juegos para ganar dinero desde tu celular. ¿Estás listo para empezar?</p>
-  <button id="wppButton">¡Quiero jugar y ganar!</button>
-  <div id="mensaje"></div>
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon">📞</div>
+      <div>Atención 24/7</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <div>Juegos al instante</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔒</div>
+      <div>Transferencia segura</div>
+    </div>
+  </section>
 
-  <script>
-    const button = document.getElementById('wppButton');
-    const mensaje = document.getElementById('mensaje');
-    const telefono = '5492234555074';
-
-    button.addEventListener('click', () => {
-      mensaje.textContent = "Hola, vi la publicidad de Tío Rico Juegos y quiero empezar ya";
-      setTimeout(() => {
-        const urlWpp = `https://wa.me/${telefono}`;
-        window.location.href = urlWpp;
-      }, 1500);
-    });
-  </script>
-
+  <footer>
+    © 2025 Tío Rico - Sitio informativo. No promueve apuestas.
+  </footer>
 </body>
 </html>
